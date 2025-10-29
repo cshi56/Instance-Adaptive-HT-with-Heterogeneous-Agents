@@ -66,21 +66,11 @@ fig = plt.figure(figsize=(fig_width, fig_height))
 
 colors = plt.cm.tab10.colors
 
-#plt.plot(type_range, base_contract_utility, label = "base contract", color = colors[0])
-#plt.fill_between(type_range, base_contract_utility, alpha=0.3, color = colors[0])
 for j in range(len(delta_list)):
     plt.plot(type_range, base_contract_utility-G_value_list[j], label = fr"$\eta$ = {delta_list[j]}", color = colors[j])
 
 plt.fill_between(type_range, base_contract_utility - G_value_list[0], alpha=0.3, color = colors[0])
     
-    
-#plt.text(
-#    0.06, 0.05, 'Information Rent',
-#    transform=plt.gca().transAxes,
-#    fontsize=fontlarge, color='blue', weight='bold',
-#    ha='left', va='bottom',
-#    bbox=dict(boxstyle='round,pad=0.3', facecolor='white', alpha=0.6, edgecolor='none')
-#)
 
 plt.xlabel('Agent type', fontsize = fontmed)
 plt.ylabel('Expected return', fontsize = fontmed)
